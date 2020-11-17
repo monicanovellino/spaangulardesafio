@@ -1,0 +1,60 @@
+<p>Os melhores produtos para o corpo!</p>
+
+<!--<p>Quantidade de produtos: {{valorInicial}}</p>-->
+<div class="button-row">
+    <button mat-raised-button color="accent" (click)="exibirTabelaHidratante()">Hidratante</button>
+    <button mat-raised-button color="accent" (click)="exibirTabelaProtetor()">Protetor solar</button>
+    <button mat-raised-button color="accent" (click)="exibirTabelaDermocosmeticos()">Dermocosméticos</button>
+</div>
+
+<table *ngIf="exibeTabelaHidratante">
+    <tr>
+        <th>Tipo</th>
+        <th>Marca</th>
+        <th>Nome</th>
+        <th>Comentarios</th>
+    </tr>
+
+    <tr *ngFor="let produto of listaHidratantes">
+        <td>{{produto.tipo}}</td>
+        <td>{{produto.marca}}</td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.comentarios}}</td>
+    </tr>
+
+</table>
+
+
+<table *ngIf="exibeTabelaDermocosmeticos">
+    <tr>
+        <th>Anti</th>
+        <th>Marca</th>
+        <th>Nome</th>
+        <th>Comentarios</th>
+    </tr>
+
+    <tr *ngFor="let produto of listaDermocosmeticos">
+        <td>{{produto.tipo}}</td>
+        <td>{{produto.marca}}</td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.comentarios}}</td>
+    </tr>
+
+</table>
+
+<table *ngIf="exibeTabelaProtetor">
+    <tr>
+        <th>Fator de Proteção</th>
+        <th>Marca</th>
+        <th>Nome</th>
+        <th>Comentarios</th>
+    </tr>
+
+    <tr *ngFor="let produto of listaProtetores">
+        <td>{{produto.tipo}}</td>
+        <td>{{produto.marca}}</td>
+        <td>{{produto.nome}}</td>
+        <td>{{produto.comentarios}}</td>
+    </tr>
+
+</table>

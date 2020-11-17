@@ -1,0 +1,11 @@
+<p>Aqui você encontra dicas dos melhores produtos para seu rosto!</p>
+
+<div>
+  <mat-selection-list #rosto [multiple]="false">
+    <mat-list-option *ngFor="let produto of produtosParaRosto" [value]="produto">
+      {{produto}}
+    </mat-list-option>
+  </mat-selection-list>
+</div>
+
+<p> Opção selecionada: {{rosto.selectedOptions.selected[0]?.value}}</p>

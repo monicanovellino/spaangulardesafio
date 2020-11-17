@@ -1,0 +1,26 @@
+<!-- Página Home do App -->
+<html>
+
+<body>
+    <h1> Lindonas</h1>
+    <h3>O melhor da beleza na web!</h3>
+    <div>
+        <button mat-raised-button [matMenuTriggerFor]="menu" color="accent">Selecione a opção desejada</button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="abreCabelo()">Cabelo</button>
+            <button mat-menu-item (click)="abreRosto()">Rosto</button>
+            <button mat-menu-item (click)="abreCorpo()">Corpo</button>
+        </mat-menu>
+    </div>
+    <div *ngIf="exibeRosto">
+        <spa-rosto></spa-rosto>
+    </div>
+    <div *ngIf="exibeCabelo">
+        <spa-cabelo></spa-cabelo>
+    </div>
+    <div *ngIf="exibeCorpo">
+        <spa-corpo></spa-corpo>
+    </div>
+</body>
+
+</html>
